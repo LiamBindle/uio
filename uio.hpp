@@ -48,8 +48,9 @@ namespace uio {
             _capacity = 0;
             _getpos = 0;
             _putpos = 0;
-            _dump = false; // flag to dump on next put
+            _dump = false;
             _buf = NULL;
+            _error._flags.uninitialized = true;
         }
 
         inline size_t in_avail() const {
@@ -57,36 +58,23 @@ namespace uio {
         }
 
         size_t sgetc(char* c) {
-            if (_buf == NULL) {
-                _error._flags.uninitialized = true;
-                return (size_t) 0;
-            } else if (_putpos - _getpos <= 0) {
+            if (_putpos - _getpos <= 0) {
                 return (size_t) 0;
             } else {
                 *c = *(_buf + (_getpos++));
-                _dump = _getpos == _putpos;
+                _dump = (_getpos == _putpos);
                 return (size_t) 1;
             }
         }
         size_t sgetn(char* s, size_t len) {
-            if (_buf == NULL) {
-                _error._flags.uninitialized = true;
-                return (size_t) 0;
-            }
             size_t n = min(_putpos - _getpos, len);
             memcpy(s, _buf + _getpos, n);
             _getpos += n;
-            _dump = _getpos == _putpos;
+            _dump = (_getpos == _putpos);
             return n;
         }
 
         size_t sputc(char c) {
-            // check for uninitialized
-            if (_buf == NULL) {
-                _error._flags.uninitialized = true;
-                return (size_t) 0;
-            }
-
             // check for dump
             if (_dump) {
                 _putpos = 0;
@@ -103,12 +91,6 @@ namespace uio {
             }
         }
         size_t sputn(const char* s, size_t len) {
-            // check for uninitialized
-            if (_buf == NULL) {
-                _error._flags.uninitialized = true;
-                return (size_t) 0;
-            }
-
             // check for dump
             if (_dump) {
                 _putpos = 0;
@@ -128,6 +110,7 @@ namespace uio {
             _getpos = 0;
             _putpos = 0;
             _error.clear();
+            _error._flags.uninitialized = (_buf == NULL);
             return n;
         }
         inline streambuf* setbuf(char* buf, size_t capacity) {
@@ -136,6 +119,7 @@ namespace uio {
             _getpos = 0;
             _putpos = 0;
             _dump = false;
+            _error._flags.uninitialized = (_buf == NULL);
             return this;
         }
 
@@ -190,25 +174,31 @@ namespace uio {
     public:
         virtual ostream& operator<<(const char* s) {
             size_t n = strlen(s);
-            if (n != _obuf.sputn(s, n)) {
+            if (n == _obuf.sputn(s, n)) {
+                return *this;
+            } else {
                 _oerror._flags.overflow = true;
                 _oerror |= _obuf._error;
+                return *this;
             }
-            return *this;
         }
         virtual ostream& put(char c) {
-            if (((size_t) 1) != _obuf.sputc(c)) {
+            if (_obuf.sputc(c)) {
+                return *this;
+            } else {
                 _oerror._flags.overflow = true;
                 _oerror |= _obuf._error;
+                return *this;
             }
-            return *this;
         }
         virtual ostream& write(const char* s, size_t n) {
-            if (n != _obuf.sputn(s, n)) {
+            if (n == _obuf.sputn(s, n)) {
+                return *this;
+            } else {
                 _oerror._flags.overflow = true;
                 _oerror |= _obuf._error;
+                return *this;
             }
-            return *this;
         }
         virtual ostream& flush() = 0;
     protected:

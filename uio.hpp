@@ -153,7 +153,7 @@ namespace uio {
             *(s + n) = '\0';
             return *this;
         }
-        virtual size_t gcount(const char* s) {
+        virtual size_t gcount() {
             return _ibuf.in_avail();
         }
         virtual size_t get(char* buf) {

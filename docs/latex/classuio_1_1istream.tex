@@ -1,0 +1,166 @@
+\hypertarget{classuio_1_1istream}{}\section{uio\+:\+:istream Class Reference}
+\label{classuio_1_1istream}\index{uio\+::istream@{uio\+::istream}}
+
+
+An input data object.  
+
+
+
+
+{\ttfamily \#include $<$uio.\+hpp$>$}
+
+
+
+Inheritance diagram for uio\+:\+:istream\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classuio_1_1istream__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classuio_1_1istream}{istream} \& \hyperlink{classuio_1_1istream_ac98975f13fe7d94de24ce9e9073daaae}{operator$>$$>$} (char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Convenience function for writing input data to {\ttfamily string}. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classuio_1_1istream_ac351e3f745e1e10d1d4f999ba097222a}{gcount} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of bytes that can be gotten using \hyperlink{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}{get}. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}{get} (char $\ast$buf)
+\begin{DoxyCompactList}\small\item\em Get the next byte from the input data stream. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \hyperlink{classuio_1_1istream_a12e8ae6afd488b62e216333dbb0935cc}{get} (char $\ast$buf, size\+\_\+t buflen)
+\begin{DoxyCompactList}\small\item\em Copy up to {\itshape buflen} bytes to {\itshape buf}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classuio_1_1istream}{istream} \& \hyperlink{classuio_1_1istream_a06381289f359f89adb4f26a32b128139}{sync} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to synchronize (update) input data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuio_1_1streamerr}{streamerr} \hyperlink{classuio_1_1istream_a31e0fa22aa929184ac32b0cbff9c545d}{\+\_\+ierror}\hypertarget{classuio_1_1istream_a31e0fa22aa929184ac32b0cbff9c545d}{}\label{classuio_1_1istream_a31e0fa22aa929184ac32b0cbff9c545d}
+
+\begin{DoxyCompactList}\small\item\em Input stream \hyperlink{classuio_1_1streamerr}{streamerr}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuio_1_1streambuf}{streambuf} \hyperlink{classuio_1_1istream_a9291e43c0a3cbb43fc0c497ba332056a}{\+\_\+ibuf}\hypertarget{classuio_1_1istream_a9291e43c0a3cbb43fc0c497ba332056a}{}\label{classuio_1_1istream_a9291e43c0a3cbb43fc0c497ba332056a}
+
+\begin{DoxyCompactList}\small\item\em Input data \hyperlink{classuio_1_1streambuf}{streambuf}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An input data object. 
+
+\hyperlink{classuio_1_1istream}{istream} is an object that supports the following operations\+: \begin{DoxyItemize}
+\item \hyperlink{classuio_1_1istream_ac351e3f745e1e10d1d4f999ba097222a}{gcount} \item \hyperlink{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}{get} \item \hyperlink{classuio_1_1istream_a06381289f359f89adb4f26a32b128139}{sync}\end{DoxyItemize}
+\begin{DoxyNote}{Note}
+Input data might not be automatically synchronized. Users should call \hyperlink{classuio_1_1istream_a06381289f359f89adb4f26a32b128139}{sync} before \hyperlink{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}{get}. 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\index{uio\+::istream@{uio\+::istream}!gcount@{gcount}}
+\index{gcount@{gcount}!uio\+::istream@{uio\+::istream}}
+\subsubsection[{\texorpdfstring{gcount()}{gcount()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t uio\+::istream\+::gcount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classuio_1_1istream_ac351e3f745e1e10d1d4f999ba097222a}{}\label{classuio_1_1istream_ac351e3f745e1e10d1d4f999ba097222a}
+
+
+Returns the number of bytes that can be gotten using \hyperlink{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}{get}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}{get}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The number of bytes that can be read. 
+\end{DoxyReturn}
+\index{uio\+::istream@{uio\+::istream}!get@{get}}
+\index{get@{get}!uio\+::istream@{uio\+::istream}}
+\subsubsection[{\texorpdfstring{get(char $\ast$buf)}{get(char *buf)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t uio\+::istream\+::get (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buf}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}{}\label{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}
+
+
+Get the next byte from the input data stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buf} & Address to copy the next input data byte to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the next byte was copied, 0 otherwise (i.\+e. no more bytes to be read). 
+\end{DoxyReturn}
+\index{uio\+::istream@{uio\+::istream}!get@{get}}
+\index{get@{get}!uio\+::istream@{uio\+::istream}}
+\subsubsection[{\texorpdfstring{get(char $\ast$buf, size\+\_\+t buflen)}{get(char *buf, size_t buflen)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t uio\+::istream\+::get (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buf, }
+\item[{size\+\_\+t}]{buflen}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classuio_1_1istream_a12e8ae6afd488b62e216333dbb0935cc}{}\label{classuio_1_1istream_a12e8ae6afd488b62e216333dbb0935cc}
+
+
+Copy up to {\itshape buflen} bytes to {\itshape buf}. 
+
+If {\itshape buflen} is greater than the number of bytes that can be gotten (\hyperlink{classuio_1_1istream_ac351e3f745e1e10d1d4f999ba097222a}{gcount}), then only \hyperlink{classuio_1_1istream_ac351e3f745e1e10d1d4f999ba097222a}{gcount} bytes will be copied to {\itshape buf}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buf} & First address to start copying bytes to. \\
+\hline
+\mbox{\tt in}  & {\em buflen} & Maximum number of bytes to be copied to {\itshape buf}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes copied to {\itshape buf}. 
+\end{DoxyReturn}
+\index{uio\+::istream@{uio\+::istream}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!uio\+::istream@{uio\+::istream}}
+\subsubsection[{\texorpdfstring{operator$>$$>$(char $\ast$s)}{operator>>(char *s)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf istream}\& uio\+::istream\+::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classuio_1_1istream_ac98975f13fe7d94de24ce9e9073daaae}{}\label{classuio_1_1istream_ac98975f13fe7d94de24ce9e9073daaae}
+
+
+Convenience function for writing input data to {\ttfamily string}. 
+
+\hyperlink{classuio_1_1istream_ac351e3f745e1e10d1d4f999ba097222a}{gcount} characters are copied to {\itshape s}, as well as a null character. This means that \hyperlink{classuio_1_1istream_ac351e3f745e1e10d1d4f999ba097222a}{gcount} plus 1 bytes are copied to {\itshape s}.
+
+\begin{DoxyAttention}{Attention}
+This function has no safe-\/guards to check that {\itshape s} is large enough to store the entire input data streams contents.
+\end{DoxyAttention}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em s} & First address of character array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} 
+\end{DoxyReturn}
+\index{uio\+::istream@{uio\+::istream}!sync@{sync}}
+\index{sync@{sync}!uio\+::istream@{uio\+::istream}}
+\subsubsection[{\texorpdfstring{sync()=0}{sync()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf istream}\& uio\+::istream\+::sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classuio_1_1istream_a06381289f359f89adb4f26a32b128139}{}\label{classuio_1_1istream_a06381289f359f89adb4f26a32b128139}
+
+
+Pure virtual function to synchronize (update) input data stream. 
+
+This function updates the internal buffers (i.\+e. does whatever needs to happend to bring the internal buffers up to date).
+
+\begin{DoxyNote}{Note}
+It might be necessary to call this function before \hyperlink{classuio_1_1istream_a2cd3af4694dd6680a16221a8e77a344b}{get}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{uio_8hpp}{uio.\+hpp}\end{DoxyCompactItemize}

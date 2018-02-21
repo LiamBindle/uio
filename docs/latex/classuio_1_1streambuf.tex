@@ -1,0 +1,245 @@
+\hypertarget{classuio_1_1streambuf}{}\section{uio\+:\+:streambuf Class Reference}
+\label{classuio_1_1streambuf}\index{uio\+::streambuf@{uio\+::streambuf}}
+
+
+A simple byte-\/buffer.  
+
+
+
+
+{\ttfamily \#include $<$uio.\+hpp$>$}
+
+
+
+Inheritance diagram for uio\+:\+:streambuf\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classuio_1_1streambuf__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuio_1_1streambuf_a990efec101a2ade1c4483b604b3b975f}{streambuf} ()\hypertarget{classuio_1_1streambuf_a990efec101a2ade1c4483b604b3b975f}{}\label{classuio_1_1streambuf_a990efec101a2ade1c4483b604b3b975f}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classuio_1_1streambuf_ada2f9f2f7fb1baf6b59d03225b19c0cf}{in\+\_\+avail} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of bytes available to be read-\/out. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classuio_1_1streambuf_adaa8fa0a7ddf5869253e1cedaf252b09}{sgetc} (char $\ast$c)
+\begin{DoxyCompactList}\small\item\em Get the next byte out of the buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classuio_1_1streambuf_ab11718a2981a8842cca0fab203ad6dd9}{sgetn} (char $\ast$s, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Copies up to {\itshape len} bytes into {\itshape s} from the buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classuio_1_1streambuf_a6557815e43ffcab9acb8571f2dda6669}{sputc} (char c)
+\begin{DoxyCompactList}\small\item\em Append {\itshape c} to the buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classuio_1_1streambuf_ae334918cb80ba6e717ced144d5b860f7}{sputn} (const char $\ast$s, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Copy {\itshape len} bytes from {\itshape s} to the back of the buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classuio_1_1streambuf_a8b39ea522254c9f1c9788d2c8f1b1851}{purge} ()
+\begin{DoxyCompactList}\small\item\em Clear all buffer data and error flags. \end{DoxyCompactList}\item 
+\hyperlink{classuio_1_1streambuf}{streambuf} $\ast$ \hyperlink{classuio_1_1streambuf_a843b3684bd11cd1fae95a9bbc28b9794}{setbuf} (char $\ast$buf, size\+\_\+t capacity)
+\begin{DoxyCompactList}\small\item\em Initialize the buffer. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{classuio_1_1streambuf_aae4696bb257ac7a41de409a01c454534}{dump} ()
+\begin{DoxyCompactList}\small\item\em Get the entire contents of the buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classuio_1_1streambuf_a5db2da142ca9bae814a73df3f794350f}{size} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of bytes in the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuio_1_1streamerr}{streamerr} \hyperlink{classuio_1_1streambuf_a93e2fac86ea892c0b8b33c0bc83dfd67}{\+\_\+error}\hypertarget{classuio_1_1streambuf_a93e2fac86ea892c0b8b33c0bc83dfd67}{}\label{classuio_1_1streambuf_a93e2fac86ea892c0b8b33c0bc83dfd67}
+
+\begin{DoxyCompactList}\small\item\em The buffer\textquotesingle{}s \hyperlink{classuio_1_1streamerr}{streamerr}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple byte-\/buffer. 
+
+This class implements an efficient and lightweight byte-\/buffer.
+
+\begin{DoxyAttention}{Attention}
+\hyperlink{classuio_1_1streambuf_a843b3684bd11cd1fae95a9bbc28b9794}{setbuf} {\itshape must} be called before this class can be used. 
+\end{DoxyAttention}
+
+
+\subsection{Member Function Documentation}
+\index{uio\+::streambuf@{uio\+::streambuf}!dump@{dump}}
+\index{dump@{dump}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{dump()}{dump()}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ uio\+::streambuf\+::dump (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_aae4696bb257ac7a41de409a01c454534}{}\label{classuio_1_1streambuf_aae4696bb257ac7a41de409a01c454534}
+
+
+Get the entire contents of the buffer. 
+
+Returns a pointer to the entire contents of the buffer. The contents of the buffer will be overwritten on the next call to \hyperlink{classuio_1_1streambuf_a6557815e43ffcab9acb8571f2dda6669}{sputc} or \hyperlink{classuio_1_1streambuf_ae334918cb80ba6e717ced144d5b860f7}{sputn} (this that calls to \hyperlink{classuio_1_1streambuf_a5db2da142ca9bae814a73df3f794350f}{size()} are valid until the next call to {\ttfamily sputc} or {\ttfamily sputn}).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuio_1_1streambuf_a5db2da142ca9bae814a73df3f794350f}{size}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Address of the first byte in the buffer. 
+\end{DoxyReturn}
+\index{uio\+::streambuf@{uio\+::streambuf}!in\+\_\+avail@{in\+\_\+avail}}
+\index{in\+\_\+avail@{in\+\_\+avail}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{in\+\_\+avail() const }{in_avail() const }}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t uio\+::streambuf\+::in\+\_\+avail (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_ada2f9f2f7fb1baf6b59d03225b19c0cf}{}\label{classuio_1_1streambuf_ada2f9f2f7fb1baf6b59d03225b19c0cf}
+
+
+Get the number of bytes available to be read-\/out. 
+
+This function is equiavlent to \hyperlink{classuio_1_1streambuf_a5db2da142ca9bae814a73df3f794350f}{size} minus the internal {\ttfamily sget} cursor position.
+
+\begin{DoxyReturn}{Returns}
+Number of bytes that can be read-\/out. 
+\end{DoxyReturn}
+\index{uio\+::streambuf@{uio\+::streambuf}!purge@{purge}}
+\index{purge@{purge}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{purge()}{purge()}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t uio\+::streambuf\+::purge (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_a8b39ea522254c9f1c9788d2c8f1b1851}{}\label{classuio_1_1streambuf_a8b39ea522254c9f1c9788d2c8f1b1851}
+
+
+Clear all buffer data and error flags. 
+
+\begin{DoxyReturn}{Returns}
+The number of bytes that were cleared from the buffer. 
+\end{DoxyReturn}
+\index{uio\+::streambuf@{uio\+::streambuf}!setbuf@{setbuf}}
+\index{setbuf@{setbuf}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{setbuf(char $\ast$buf, size\+\_\+t capacity)}{setbuf(char *buf, size_t capacity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf streambuf}$\ast$ uio\+::streambuf\+::setbuf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buf, }
+\item[{size\+\_\+t}]{capacity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_a843b3684bd11cd1fae95a9bbc28b9794}{}\label{classuio_1_1streambuf_a843b3684bd11cd1fae95a9bbc28b9794}
+
+
+Initialize the buffer. 
+
+\begin{DoxyAttention}{Attention}
+This function {\itshape must} be called before the buffer can be used.
+\end{DoxyAttention}
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Memory allocation for this buffer. \\
+\hline
+{\em capacity} & Size of the buffer (i.\+e. size of {\itshape buf}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily this} 
+\end{DoxyReturn}
+\index{uio\+::streambuf@{uio\+::streambuf}!sgetc@{sgetc}}
+\index{sgetc@{sgetc}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{sgetc(char $\ast$c)}{sgetc(char *c)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t uio\+::streambuf\+::sgetc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_adaa8fa0a7ddf5869253e1cedaf252b09}{}\label{classuio_1_1streambuf_adaa8fa0a7ddf5869253e1cedaf252b09}
+
+
+Get the next byte out of the buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em c} & Address to copy byte to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a byte was copied to {\itshape c}, 0 otherwise (i.\+e. no bytes left in the buffer). 
+\end{DoxyReturn}
+\index{uio\+::streambuf@{uio\+::streambuf}!sgetn@{sgetn}}
+\index{sgetn@{sgetn}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{sgetn(char $\ast$s, size\+\_\+t len)}{sgetn(char *s, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t uio\+::streambuf\+::sgetn (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_ab11718a2981a8842cca0fab203ad6dd9}{}\label{classuio_1_1streambuf_ab11718a2981a8842cca0fab203ad6dd9}
+
+
+Copies up to {\itshape len} bytes into {\itshape s} from the buffer. 
+
+If there are fewer than {\itshape len} bytes in the buffer, \hyperlink{classuio_1_1streambuf_ada2f9f2f7fb1baf6b59d03225b19c0cf}{in\+\_\+avail()} bytes will be copied to {\itshape s}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em s} & Address to begin copying to. \\
+\hline
+\mbox{\tt in}  & {\em len} & Maximum number of bytes to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes copied to {\itshape s}. 
+\end{DoxyReturn}
+\index{uio\+::streambuf@{uio\+::streambuf}!size@{size}}
+\index{size@{size}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t uio\+::streambuf\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_a5db2da142ca9bae814a73df3f794350f}{}\label{classuio_1_1streambuf_a5db2da142ca9bae814a73df3f794350f}
+
+
+Get the number of bytes in the buffer. 
+
+This function is similar to \hyperlink{classuio_1_1streambuf_ada2f9f2f7fb1baf6b59d03225b19c0cf}{in\+\_\+avail} except it returns the total number of bytes that have been put into the buffer (as opposed to {\ttfamily in\+\_\+avail} which returns the number of bytes put into the buffer minus internal cursors position).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuio_1_1streambuf_aae4696bb257ac7a41de409a01c454534}{dump}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The total number of bytes in the buffer. 
+\end{DoxyReturn}
+\index{uio\+::streambuf@{uio\+::streambuf}!sputc@{sputc}}
+\index{sputc@{sputc}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{sputc(char c)}{sputc(char c)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t uio\+::streambuf\+::sputc (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_a6557815e43ffcab9acb8571f2dda6669}{}\label{classuio_1_1streambuf_a6557815e43ffcab9acb8571f2dda6669}
+
+
+Append {\itshape c} to the buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & Byte to be appended to the buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the byte was appended, 0 otherwise (i.\+e. buffer is full). 
+\end{DoxyReturn}
+\index{uio\+::streambuf@{uio\+::streambuf}!sputn@{sputn}}
+\index{sputn@{sputn}!uio\+::streambuf@{uio\+::streambuf}}
+\subsubsection[{\texorpdfstring{sputn(const char $\ast$s, size\+\_\+t len)}{sputn(const char *s, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t uio\+::streambuf\+::sputn (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streambuf_ae334918cb80ba6e717ced144d5b860f7}{}\label{classuio_1_1streambuf_ae334918cb80ba6e717ced144d5b860f7}
+
+
+Copy {\itshape len} bytes from {\itshape s} to the back of the buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s} & Address to begin copying from. \\
+\hline
+\mbox{\tt in}  & {\em len} & Number of bytes to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes copyied, beginning at {\itshape s}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{uio_8hpp}{uio.\+hpp}\end{DoxyCompactItemize}

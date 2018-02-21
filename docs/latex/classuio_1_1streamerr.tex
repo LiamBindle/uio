@@ -1,0 +1,68 @@
+\hypertarget{classuio_1_1streamerr}{}\section{uio\+:\+:streamerr Class Reference}
+\label{classuio_1_1streamerr}\index{uio\+::streamerr@{uio\+::streamerr}}
+
+
+Class to manage stream errors.  
+
+
+
+
+{\ttfamily \#include $<$uio.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classuio_1_1streamerr_a489dbd90ff5840fa7ed3faf361f7e96e}{any} () const 
+\begin{DoxyCompactList}\small\item\em Returns {\ttfamily true} if any error flags are set. \end{DoxyCompactList}\item 
+void \hyperlink{classuio_1_1streamerr_adfb4269789a3552ec5c9a8bb00b1d30a}{clear} ()\hypertarget{classuio_1_1streamerr_adfb4269789a3552ec5c9a8bb00b1d30a}{}\label{classuio_1_1streamerr_adfb4269789a3552ec5c9a8bb00b1d30a}
+
+\begin{DoxyCompactList}\small\item\em Clear all error flags. \end{DoxyCompactList}\item 
+\hyperlink{classuio_1_1streamerr_a1274fd04b3fed5edf1e86f73811fb87e}{streamerr} ()\hypertarget{classuio_1_1streamerr_a1274fd04b3fed5edf1e86f73811fb87e}{}\label{classuio_1_1streamerr_a1274fd04b3fed5edf1e86f73811fb87e}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classuio_1_1streamerr_ad4aac6b30724592b8cb15d3a5929e1c6}{operator$\vert$=} (const \hyperlink{classuio_1_1streamerr}{streamerr} \&other)\hypertarget{classuio_1_1streamerr_ad4aac6b30724592b8cb15d3a5929e1c6}{}\label{classuio_1_1streamerr_ad4aac6b30724592b8cb15d3a5929e1c6}
+
+\begin{DoxyCompactList}\small\item\em Bitwise \hyperlink{classuio_1_1streamerr_add2fbb3ab5f357d618775d37e6f3201b}{\+\_\+flags} {\ttfamily OR} {\ttfamily assignment} {\ttfamily operator}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>unsigned char \hyperlink{classuio_1_1streamerr_a913bb06032e5a68a6141871cccc2fbd5}{uninitialized}: 1\\
+\>\>{\em Stream has not been properly initialized. }\\
+\>unsigned char \hyperlink{classuio_1_1streamerr_ac7c0504e1147ba5362a266721a71c076}{overflow}: 1\\
+\>\>{\em A buffer has overflowed. }\\
+\>unsigned char \hyperlink{classuio_1_1streamerr_a61c17078edf29f70e7fc35402f3d6125}{reserved}: 4\\
+\>\>{\em Application-\/layer error codes. }\\
+\} \hyperlink{classuio_1_1streamerr_add2fbb3ab5f357d618775d37e6f3201b}{\_flags}\hypertarget{classuio_1_1streamerr_add2fbb3ab5f357d618775d37e6f3201b}{}\label{classuio_1_1streamerr_add2fbb3ab5f357d618775d37e6f3201b}
+\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em The bitmap of error flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to manage stream errors. 
+
+This class is used to set, clear, and manage stream errors that might be encountered during stream operations. 
+
+\subsection{Member Function Documentation}
+\index{uio\+::streamerr@{uio\+::streamerr}!any@{any}}
+\index{any@{any}!uio\+::streamerr@{uio\+::streamerr}}
+\subsubsection[{\texorpdfstring{any() const }{any() const }}]{\setlength{\rightskip}{0pt plus 5cm}bool uio\+::streamerr\+::any (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classuio_1_1streamerr_a489dbd90ff5840fa7ed3faf361f7e96e}{}\label{classuio_1_1streamerr_a489dbd90ff5840fa7ed3faf361f7e96e}
+
+
+Returns {\ttfamily true} if any error flags are set. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if any error flags are set, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{uio_8hpp}{uio.\+hpp}\end{DoxyCompactItemize}

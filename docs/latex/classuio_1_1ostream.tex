@@ -1,0 +1,148 @@
+\hypertarget{classuio_1_1ostream}{}\section{uio\+:\+:ostream Class Reference}
+\label{classuio_1_1ostream}\index{uio\+::ostream@{uio\+::ostream}}
+
+
+An output data object.  
+
+
+
+
+{\ttfamily \#include $<$uio.\+hpp$>$}
+
+
+
+Inheritance diagram for uio\+:\+:ostream\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classuio_1_1ostream__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classuio_1_1ostream}{ostream} \& \hyperlink{classuio_1_1ostream_a9997cc4d79bc6019fe554efe188f923e}{operator$<$$<$} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Convenience function for writing output data from a {\ttfamily string}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classuio_1_1ostream}{ostream} \& \hyperlink{classuio_1_1ostream_aeffd1b2ee0a79a6728840811c7ad1770}{put} (char c)
+\begin{DoxyCompactList}\small\item\em Write byte to output data stream. \end{DoxyCompactList}\item 
+virtual \hyperlink{classuio_1_1ostream}{ostream} \& \hyperlink{classuio_1_1ostream_a4da5a561a3547e3a3793618860182354}{write} (const char $\ast$s, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Write {\itshape n} bytes from {\itshape s} to the output data stream. \end{DoxyCompactList}\item 
+virtual \hyperlink{classuio_1_1ostream}{ostream} \& \hyperlink{classuio_1_1ostream_a8c398c36b7619aa7cf32da064bce64d3}{flush} ()=0
+\begin{DoxyCompactList}\small\item\em A pure virtual function to flush buffered data to output data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuio_1_1streamerr}{streamerr} \hyperlink{classuio_1_1ostream_aaba80028bfff5f9d12f40789db0c8d58}{\+\_\+oerror}\hypertarget{classuio_1_1ostream_aaba80028bfff5f9d12f40789db0c8d58}{}\label{classuio_1_1ostream_aaba80028bfff5f9d12f40789db0c8d58}
+
+\begin{DoxyCompactList}\small\item\em Output stream \hyperlink{classuio_1_1streamerr}{streamerr}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuio_1_1streambuf}{streambuf} \hyperlink{classuio_1_1ostream_a9f8d3fae9009a4d06bfc12af161a3ca2}{\+\_\+obuf}\hypertarget{classuio_1_1ostream_a9f8d3fae9009a4d06bfc12af161a3ca2}{}\label{classuio_1_1ostream_a9f8d3fae9009a4d06bfc12af161a3ca2}
+
+\begin{DoxyCompactList}\small\item\em Output stream \hyperlink{classuio_1_1streambuf}{streambuf}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An output data object. 
+
+\hyperlink{classuio_1_1ostream}{ostream} is an object that supports the following operations\+: \begin{DoxyItemize}
+\item \hyperlink{classuio_1_1ostream_aeffd1b2ee0a79a6728840811c7ad1770}{put} \item \hyperlink{classuio_1_1ostream_a8c398c36b7619aa7cf32da064bce64d3}{flush}\end{DoxyItemize}
+\begin{DoxyNote}{Note}
+Output data might not be automatically flushed. Users should call \hyperlink{classuio_1_1ostream_a8c398c36b7619aa7cf32da064bce64d3}{flush} when they want the internal buffers to be written out. 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\index{uio\+::ostream@{uio\+::ostream}!flush@{flush}}
+\index{flush@{flush}!uio\+::ostream@{uio\+::ostream}}
+\subsubsection[{\texorpdfstring{flush()=0}{flush()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ostream}\& uio\+::ostream\+::flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classuio_1_1ostream_a8c398c36b7619aa7cf32da064bce64d3}{}\label{classuio_1_1ostream_a8c398c36b7619aa7cf32da064bce64d3}
+
+
+A pure virtual function to flush buffered data to output data stream. 
+
+This function does whatever is necessary to output the buffered data.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} 
+\end{DoxyReturn}
+\index{uio\+::ostream@{uio\+::ostream}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!uio\+::ostream@{uio\+::ostream}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(const char $\ast$s)}{operator<<(const char *s)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ostream}\& uio\+::ostream\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classuio_1_1ostream_a9997cc4d79bc6019fe554efe188f923e}{}\label{classuio_1_1ostream_a9997cc4d79bc6019fe554efe188f923e}
+
+
+Convenience function for writing output data from a {\ttfamily string}. 
+
+\begin{DoxyNote}{Note}
+The null character at the end of {\itshape s} is {\itshape not} copied to the buffer.
+
+{\ttfamily \+\_\+oerror.\+\_\+flags.\+overflow} is set if there is not enough space in the output buffer.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em s} & Character array to write to output stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} 
+\end{DoxyReturn}
+\index{uio\+::ostream@{uio\+::ostream}!put@{put}}
+\index{put@{put}!uio\+::ostream@{uio\+::ostream}}
+\subsubsection[{\texorpdfstring{put(char c)}{put(char c)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ostream}\& uio\+::ostream\+::put (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classuio_1_1ostream_aeffd1b2ee0a79a6728840811c7ad1770}{}\label{classuio_1_1ostream_aeffd1b2ee0a79a6728840811c7ad1770}
+
+
+Write byte to output data stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em c} & The byte\textquotesingle{}s value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+{\ttfamily \+\_\+oerror.\+\_\+flags.\+overflow} is set if there is not enough space in the output buffer.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} 
+\end{DoxyReturn}
+\index{uio\+::ostream@{uio\+::ostream}!write@{write}}
+\index{write@{write}!uio\+::ostream@{uio\+::ostream}}
+\subsubsection[{\texorpdfstring{write(const char $\ast$s, size\+\_\+t n)}{write(const char *s, size_t n)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ostream}\& uio\+::ostream\+::write (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{size\+\_\+t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classuio_1_1ostream_a4da5a561a3547e3a3793618860182354}{}\label{classuio_1_1ostream_a4da5a561a3547e3a3793618860182354}
+
+
+Write {\itshape n} bytes from {\itshape s} to the output data stream. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s} & The address of the first byte to be written. \\
+\hline
+\mbox{\tt in}  & {\em n} & The number of bytes to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+{\ttfamily \+\_\+oerror.\+\_\+flags.\+overflow} is set if there is not enough space in the output buffer.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+{\ttfamily $\ast$this} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{uio_8hpp}{uio.\+hpp}\end{DoxyCompactItemize}

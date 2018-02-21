@@ -1,0 +1,6 @@
+<map id="uio::stream_base" name="uio::stream_base">
+<area shape="rect" id="node2" href="$classuio_1_1istream.html" title="An input data object. " alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node4" href="$classuio_1_1ostream.html" title="An output data object. " alt="" coords="121,80,215,107"/>
+<area shape="rect" id="node5" href="$classuio_1_1streambuf.html" title="A simple byte&#45;buffer. " alt="" coords="239,80,345,107"/>
+<area shape="rect" id="node3" href="$classuio_1_1iostream.html" title="An input and output data stream. " alt="" coords="61,155,158,181"/>
+</map>

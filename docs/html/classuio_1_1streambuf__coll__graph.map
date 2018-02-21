@@ -1,0 +1,4 @@
+<map id="uio::streambuf" name="uio::streambuf">
+<area shape="rect" id="node2" href="$classuio_1_1stream__base.html" title="Base class for all stream objects. " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node3" href="$classuio_1_1streamerr.html" title="Class to manage stream errors. " alt="" coords="153,5,255,32"/>
+</map>

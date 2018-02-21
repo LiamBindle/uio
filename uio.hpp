@@ -1,4 +1,7 @@
+#ifndef UIO_H
+#define UIO_H
 
+#include <HAL.hpp>
 #include <cstring>
 
 namespace uio {
@@ -209,3 +212,5 @@ namespace uio {
 
     class iostream : public istream, public ostream {};
 };
+
+#endif // UIO_H
